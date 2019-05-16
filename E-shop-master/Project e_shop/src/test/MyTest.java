@@ -1,21 +1,16 @@
-
 package test;
 
 import model.Product;
 import model.Shop;
 import myUtil.DateTools;
-
 import java.util.ArrayList;
 import java.util.List;
-
-
 
 public class MyTest {
 
 
 	public static void main(String[] args) {
 
-		System.out.println("test2");
 		// We print the current date and time.
 		System.out.println(DateTools.printCurrentDateTime());
 		
@@ -28,20 +23,31 @@ public class MyTest {
 		myShop.setExistingMemberships(DataHelper.createSomeMemberships());
 		//myShop.setExistingCashiers(DataHelper.createSomeCashiers());
 
+		// Create a list that all the available products will go
         List<Product> listOfAllProducts = new ArrayList<>();
-        
-        
-        
-        
+
+        // Insert all products to the list
         for(Product p:myShop.getExistingProducts()){
         	listOfAllProducts.add(p);
         }
-        
+
+        // Create a class object responsible for the Order of the products
         OrderCreation createOrder = new OrderCreation();
-        createOrder.newOrder(listOfAllProducts);
-        
+
+        // Calls the method newOrder
+       List list_ids = createOrder.newOrder(listOfAllProducts);
+
+
+        // Create a class object responsible for the CheckOut
+        CheckOut checkOut = new CheckOut();
+
+        //Calls the method
+		checkOut.invoice();
+
+
+
         System.out.println("menu");
-		
+
 		// create a class: User and two subclasses: Employee and Customer  
 		
 	}
