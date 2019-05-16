@@ -15,7 +15,7 @@ public class MyTest {
 
 	public static void main(String[] args) {
 
-		System.out.println("We are the Champions");
+		System.out.println("We are the Champions!!!");
 		// We print the current date and time.
 		System.out.println(DateTools.printCurrentDateTime());
 		
