@@ -1,55 +1,71 @@
 package test;
 
-
-import java.util.LinkedHashMap;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import model.Product;
+import model.SelectedProduct;
 
 public class OrderCreation {
 	
-	private LinkedHashMap<String, String> listOfSelectedProducts = new LinkedHashMap<>();
+	
+	private List<SelectedProduct> listOfSelectedProducts = new ArrayList<>();
 	
 	public void OrderCreation() {
 		
 	}
 	
-	public LinkedHashMap<String, String> newOrder(List<Product> products){
-		
+	public List<SelectedProduct> newOrder(List<Product> products){
 		
 		Scanner input = new Scanner(System.in);
-		int saveSelections = products.size() + 1;
-		int selection = 0;
-		boolean emptyValueCheck = true;
+		int totalChoices = products.size() + 1;
+		int selectedProduct = 0;
+		int i = 0;
+		double convertedPrice = 0;
 		
-		while(emptyValueCheck) {
+		while(true) {
 			System.out.println("\t\tCreate Your Order.");
 			System.out.println("\t\t------------------\n");
-			System.out.println("-Code-\t\t-Name-\t\t\t\t-Price-");
-			System.out.println("-------\t\t-------\t\t\t\t-------");
+			System.out.println("-Code-\t\t\t-Name-\t\t\t\t-Description\t\t\t-Price-");
+			System.out.println("-------\t\t\t------\t\t\t\t-----------\t\t\t-------");
 			
 			for(Product s:products) {
-				System.out.print("  " + s.getCode().substring(1) + "\t\t" + s.getName());
-				System.out.printf("\t\t\t%f2.0\n" , s.getPrice());
+				System.out.print("  " + s.getCode().substring(1));
+				System.out.printf("\t%27s",s.getName());
+				System.out.printf("\t%45s", s.getDescription());
+				System.out.println("\t" + s.getPrice().setScale(2,2));
 			}
+			System.out.println("\n  " + totalChoices + "\t\t\tProcced to checkout");
+			System.out.println("   0\t\t\tExit - Cancel Order");
 		
 			System.out.print("\nSelect one Product at a time:");
-			emptyValueCheck = input.hasNextLine();
-			selection = input.nextInt();
+			selectedProduct = input.nextInt();
 			
-			if(selection == saveSelections || selection == 0) {
+			if(selectedProduct == totalChoices || selectedProduct == 0) {
 				break;
 			}
 			
+			int quantity = -1;
 			
+			while(quantity <= 0) {
+				System.out.print("Type quantity for this product:");
+				quantity = input.nextInt();
+			}
+			
+			listOfSelectedProducts.add(new SelectedProduct());
+			listOfSelectedProducts.get(i).setCode(selectedProduct);
+			listOfSelectedProducts.get(i).setName(products.get(selectedProduct).getName());
+			listOfSelectedProducts.get(i).setDescription(products.get(selectedProduct).getDescription());
+			listOfSelectedProducts.get(i).setQuantity(quantity);
+			convertedPrice = (products.get(i).getPrice().setScale(2,2)).doubleValue();
+			listOfSelectedProducts.get(i).setPrice(convertedPrice);
+			listOfSelectedProducts.get(i).setTotalCost();
+			
+			i++;
 		}
 		
-		System.out.println(selection);
-		
-		
 		return listOfSelectedProducts;
-	
 	}
 
 
