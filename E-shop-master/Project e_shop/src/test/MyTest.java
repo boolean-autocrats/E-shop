@@ -35,8 +35,9 @@ public class MyTest {
         OrderCreation createOrder = new OrderCreation();
 
         // Calls the method newOrder
-       List list_ids = createOrder.newOrder(listOfAllProducts);
-
+        //List list_ids = 
+    	createOrder.newOrder(listOfAllProducts);
+    	
 
         // Create a class object responsible for the CheckOut
         CheckOut checkOut = new CheckOut();
