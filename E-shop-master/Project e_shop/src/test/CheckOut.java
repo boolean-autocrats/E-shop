@@ -13,7 +13,7 @@ public class CheckOut {
         System.out.println("\t------\t\t\t\t-------------\t\t\t-------");
 
         for(SelectedProduct s: list){
-            System.out.println();
+            System.out.println(list.);
             System.out.println();
             System.out.println();
             System.out.println();
