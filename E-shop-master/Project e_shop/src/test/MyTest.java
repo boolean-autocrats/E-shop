@@ -26,7 +26,7 @@ public class MyTest {
 		// Create a list that all the available products will go
         List<Product> listOfAllProducts = new ArrayList<>();
 
-        // Insert all products to the list
+		// Insert all products to the list
         for(Product p:myShop.getExistingProducts()){
         	listOfAllProducts.add(p);
         }
@@ -34,17 +34,12 @@ public class MyTest {
         // Create a class object responsible for the Order of the products
         OrderCreation createOrder = new OrderCreation();
 
-        // Calls the method newOrder
-        //List list_ids = 
-    	createOrder.newOrder(listOfAllProducts);
-    	
 
         // Create a class object responsible for the CheckOut
-        CheckOut checkOut = new CheckOut();
+		CheckOut checkOut = new CheckOut();
 
-        //Calls the method
-		checkOut.invoice();
-
+		// Calls the method newOrder
+		checkOut.invoice(createOrder.newOrder(listOfAllProducts));
 
 
         System.out.println("menu");
