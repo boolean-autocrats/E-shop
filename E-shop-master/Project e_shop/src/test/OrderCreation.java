@@ -1,11 +1,10 @@
 package test;
 
+import model.Product;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-import model.Product;
-import model.SelectedProduct;
 
 public class OrderCreation {
 	
@@ -28,7 +27,7 @@ public class OrderCreation {
 			System.out.println("\t\tCreate Your Order.");
 			System.out.println("\t\t------------------\n");
 			System.out.println("-Code-\t\t\t-Name-\t\t\t\t-Description\t\t\t-Price-");
-			System.out.println("-------\t\t\t------\t\t\t\t-----------\t\t\t-------");
+			System.out.println("-------\t\t\t------\t\t\t\t------------\t\t\t\t-------");
 			
 			for(Product s:products) {
 				System.out.print("  " + s.getCode().substring(1));
@@ -36,7 +35,7 @@ public class OrderCreation {
 				System.out.printf("\t%45s", s.getDescription());
 				System.out.println("\t" + s.getPrice().setScale(2,2));
 			}
-			System.out.println("\n  " + totalChoices + "\t\t\tProcced to checkout");
+			System.out.println("\n  " + totalChoices + "\t\t\tProceed to checkout");
 			System.out.println("   0\t\t\tExit - Cancel Order");
 		
 			System.out.print("\nSelect one Product at a time:");
@@ -61,7 +60,7 @@ public class OrderCreation {
 			convertedPrice = (products.get(i).getPrice().setScale(2,2)).doubleValue();
 			listOfSelectedProducts.get(i).setPrice(convertedPrice);
 			listOfSelectedProducts.get(i).setTotalCost();
-			
+			System.out.println(listOfSelectedProducts.get(i));
 			i++;
 		}
 		

@@ -1,15 +1,11 @@
 
 package test;
 
+import model.*;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import model.Cashier;
-import model.Constants;
-import model.Coupon;
-import model.Customer;
-import model.Membership;
-import model.Product;
 
 
 public class DataHelper {
