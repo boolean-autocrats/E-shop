@@ -8,7 +8,6 @@ public class SelectedProduct {
 
     }
 
-
     private int code ;
     private String name;
     private String description;
