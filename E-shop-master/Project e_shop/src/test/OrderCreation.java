@@ -14,7 +14,6 @@ public class OrderCreation {
 	public void OrderCreation() {
 		
 	}
-	
 	public List<SelectedProduct> newOrder(List<Product> products){
 		
 		Scanner input = new Scanner(System.in);
@@ -27,7 +26,7 @@ public class OrderCreation {
 			System.out.println("\t\tCreate Your Order.");
 			System.out.println("\t\t------------------\n");
 			System.out.println("-Code-\t\t\t-Name-\t\t\t\t-Description\t\t\t-Price-");
-			System.out.println("-------\t\t\t------\t\t\t\t------------\t\t\t\t-------");
+			System.out.println("-------\t\t\t------\t\t\t\t------------\t\t\t-------");
 			
 			for(Product s:products) {
 				System.out.print("  " + s.getCode().substring(1));

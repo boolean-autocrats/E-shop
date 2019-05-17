@@ -2,12 +2,6 @@ package test;
 
 public class SelectedProduct {
 
-
-     public void SelectedProduct(){
-        System.out.println("asdfasd");
-
-    }
-
     private int code ;
     private String name;
     private String description;
