@@ -34,7 +34,7 @@ public class MyTest {
         // Create a class object responsible for the Order of the products
         OrderCreation createOrder = new OrderCreation();
 
-        List<SelectedProduct> chosenProducts = new ArrayList();
+        List<SelectedProduct> chosenProducts = new ArrayList<>();
 
 		// Calls the method newOrder
 		chosenProducts.addAll(createOrder.newOrder(listOfAllProducts));

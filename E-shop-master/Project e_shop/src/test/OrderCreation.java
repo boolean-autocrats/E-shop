@@ -11,9 +11,10 @@ public class OrderCreation {
 	
 	private List<SelectedProduct> listOfSelectedProducts = new ArrayList<>();
 	
-	public void OrderCreation() {
+	public OrderCreation() {
 		
 	}
+	
 	public List<SelectedProduct> newOrder(List<Product> products){
 		
 		Scanner input = new Scanner(System.in);
@@ -59,7 +60,7 @@ public class OrderCreation {
 			convertedPrice = (products.get(i).getPrice().setScale(2,2)).doubleValue();
 			listOfSelectedProducts.get(i).setPrice(convertedPrice);
 			listOfSelectedProducts.get(i).setTotalCost();
-			System.out.println(listOfSelectedProducts.get(i));
+			
 			i++;
 		}
 		
