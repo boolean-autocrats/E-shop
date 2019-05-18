@@ -15,11 +15,12 @@ public class CheckOut {
 
         // Needs some work
         for(SelectedProduct s: list){
-            System.out.printf("\t" + s.getName());
-            System.out.printf("\t\t\t\t\t\t" + s.getDescription());
-            System.out.printf("\t\t\t\t\t\t\t\t" + s.getQuantity());
-            System.out.printf("\t\t\t\t\t " + s.getPrice());
 
+            System.out.printf("%-1s%-22s","", s .getName());
+            System.out.printf("%-30s%-22s","", s.getDescription());
+            System.out.printf("%-30s%-22s","", s.getQuantity());
+            System.out.printf("%-30s%-22s","", s.getPrice());
+            System.out.println("");
             TotalCost += s.getPrice() * s.getQuantity();
         }
 
