@@ -46,7 +46,7 @@ public class OrderCreation {
 			}
 			
 			int quantity = -1;
-			
+			 
 			while(quantity <= 0) {
 				System.out.print("Type quantity for this product:");
 				quantity = input.nextInt();
