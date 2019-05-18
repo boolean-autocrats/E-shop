@@ -46,8 +46,7 @@ public class MyTest {
 		checkOut.invoice(chosenProducts);
 
 
-        System.out.println("menu");
-
+     
 		// create a class: User and two subclasses: Employee and Customer  
 		
 	}
