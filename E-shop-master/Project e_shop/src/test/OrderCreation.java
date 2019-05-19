@@ -18,7 +18,7 @@ public class OrderCreation {
 	public List<SelectedProduct> newOrder(List<Product> products){
 		
 		Scanner input = new Scanner(System.in);
-		int totalChoices = products.size() + 1;
+		int checkOut = products.size() + 1;
 		int selectedProduct = 0;
 		int i = 0;
 		double convertedPrice = 0;
@@ -35,13 +35,13 @@ public class OrderCreation {
 				System.out.printf("\t%45s", s.getDescription());
 				System.out.println("\t" + s.getPrice().setScale(2,2));
 			}
-			System.out.println("\n  " + totalChoices + "\t\t\tProceed to checkout");
+			System.out.println("\n  " + checkOut + "\t\t\tProceed to checkout");
 			System.out.println("   0\t\t\tExit - Cancel Order");
 		
 			System.out.print("\nSelect one Product at a time:");
 			selectedProduct = input.nextInt();
 			
-			if(selectedProduct == totalChoices || selectedProduct == 0) {
+			if(selectedProduct == checkOut || selectedProduct == 0) {
 				break;
 			}
 			
@@ -53,9 +53,9 @@ public class OrderCreation {
 			}
 			
 			listOfSelectedProducts.add(new SelectedProduct());
-			listOfSelectedProducts.get(i).setCode(selectedProduct);
-			listOfSelectedProducts.get(i).setName(products.get(selectedProduct).getName());
-			listOfSelectedProducts.get(i).setDescription(products.get(selectedProduct).getDescription());
+			listOfSelectedProducts.get(i).setCode(selectedProduct -1);
+			listOfSelectedProducts.get(i).setName(products.get(selectedProduct -1).getName());
+			listOfSelectedProducts.get(i).setDescription(products.get(selectedProduct -1).getDescription());
 			listOfSelectedProducts.get(i).setQuantity(quantity);
 			convertedPrice = (products.get(i).getPrice().setScale(2,2)).doubleValue();
 			listOfSelectedProducts.get(i).setPrice(convertedPrice);
