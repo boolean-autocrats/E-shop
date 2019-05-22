@@ -26,19 +26,16 @@ public class OrderCreation {
 		while(true) {
 			System.out.println("\t\tCreate Your Order.");
 			System.out.println("\t\t------------------\n");
-			System.out.println("-Code-\t\t\t-Name-\t\t\t\t-Description\t\t\t-Price-");
-			System.out.println("-------\t\t\t------\t\t\t\t------------\t\t\t-------");
+			System.out.println("-Code-\t\t\t-Name-\t\t\t\t\t\t\t\t\t-Description\t\t\t\t\t\t\t\t\t\t-Price-");
+			System.out.println("-------\t\t\t--------\t\t\t\t\t\t\t\t----------------\t\t\t\t\t\t\t\t\t-------");
 			
 			for(Product s:products) {
-				System.out.print("  " + s.getCode().substring(1));
-				System.out.printf("\t%27s",s.getName());
-				System.out.printf("\t%45s", s.getDescription());
-				System.out.println("\t" + s.getPrice().setScale(2,2));
+				System.out.format("  %-13s%-40s\t%-40s\t\t\t%.02f\n",s.getCode().substring(1),s.getName(),s.getDescription(),s.getPrice().setScale(2,2));
 			}
 			System.out.println("\n  " + checkOut + "\t\t\tProceed to checkout");
 			System.out.println("   0\t\t\tExit - Cancel Order");
 		
-			System.out.print("\nSelect one Product at a time:");
+			System.out.print("\nChoose an item to add to the basket:");
 			selectedProduct = input.nextInt();
 			
 			if(selectedProduct == checkOut || selectedProduct == 0) {
