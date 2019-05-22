@@ -33,7 +33,7 @@ public class Sign_in {
         System.out.print("Give me your Phone Number :");
         while(true){
             try{
-                costumerInfo.add(input.nextInt());
+                costumerInfo.add(input.nextLong());
                 break;
             }catch(Exception ex){
                 input.next();
