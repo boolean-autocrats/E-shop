@@ -49,7 +49,7 @@ public class MyTest {
 			System.out.println("---------E-shop Selections---------");
 			System.out.println("------>" + DateTools.printCurrentDateTime() + "<-------\n");   //Date_and_time..
 
-			System.out.println("1)Product List..");
+			System.out.println("1)Items List");
 			System.out.println("2)CheckOut");
 			System.out.println("3)Sign in");
 			System.out.println("0)Exit\n");
