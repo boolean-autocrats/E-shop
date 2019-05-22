@@ -21,7 +21,7 @@ public class CheckOut {
             TotalCost += (s.getPrice() * s.getQuantity());
         }
 
-        System.out.println("\n\n\tThe Total cost is : " + TotalCost + "€");
+        System.out.format("\n\n\tThe Total cost is : %.02f€",TotalCost);
 
 
     }
