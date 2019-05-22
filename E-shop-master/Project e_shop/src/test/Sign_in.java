@@ -31,11 +31,11 @@ public class Sign_in {
 
         // Bug
         System.out.print("Give me your Phone Number :");
-        while(true){
-            try{
+        while (true) {
+            try {
                 costumerInfo.add(input.nextLong());
                 break;
-            }catch(Exception ex){
+            } catch (Exception ex) {
                 input.next();
                 System.out.print("You need to type a Phone :");
             }

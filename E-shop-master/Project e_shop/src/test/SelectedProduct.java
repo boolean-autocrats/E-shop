@@ -2,7 +2,7 @@ package test;
 
 public class SelectedProduct {
 
-    private int code ;
+    private int code;
     private String name;
     private String description;
     private int quantity;
@@ -49,7 +49,7 @@ public class SelectedProduct {
 
     // Setters
     public void setTotalCost() {
-        this.totalCost = getPrice()*getQuantity();
+        this.totalCost = getPrice() * getQuantity();
     }
 
     public double getPrice() {

@@ -4,7 +4,7 @@ import java.util.List;
 
 public class CheckOut {
 
-    public void invoice(List<SelectedProduct> list){
+    public void invoice(List<SelectedProduct> list) {
 
         double TotalCost = 0;
 
@@ -14,14 +14,14 @@ public class CheckOut {
         System.out.println("\t------\t\t\t\t\t\t\t\t\t\t-------------\t\t\t\t\t\t\t\t\t\t\t\t---------\t\t\t\t-------");
 
 
-        for(SelectedProduct s: list){
+        for (SelectedProduct s : list) {
 
-            System.out.format("\t%-40s%-40s\t%25d\t\t\t\t\t %.02f\n", s.getName(), s.getDescription(),s.getQuantity(),s.getPrice());
+            System.out.format("\t%-40s%-40s\t%25d\t\t\t\t\t %.02f\n", s.getName(), s.getDescription(), s.getQuantity(), s.getPrice());
 
             TotalCost += (s.getPrice() * s.getQuantity());
         }
 
-        System.out.format("\n\n\tThe Total cost is : %.02f€",TotalCost);
+        System.out.format("\n\n\tThe Total cost is : %.02f€", TotalCost);
 
 
     }
