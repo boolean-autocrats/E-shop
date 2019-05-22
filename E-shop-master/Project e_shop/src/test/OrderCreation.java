@@ -26,8 +26,8 @@ public class OrderCreation {
 		while(true) {
 			System.out.println("\t\tCreate Your Order.");
 			System.out.println("\t\t------------------\n");
-			System.out.println("-Code-\t\t\t-Name-\t\t\t\t\t\t\t\t\t-Description\t\t\t\t\t\t\t\t\t\t-Price-");
-			System.out.println("-------\t\t\t--------\t\t\t\t\t\t\t\t----------------\t\t\t\t\t\t\t\t\t-------");
+			System.out.println("-Code-\t\t-Name-\t\t\t\t\t-Description\t\t\t\t\t\t\t-Price-");
+			System.out.println("-------\t\t--------\t\t\t\t----------------\t\t\t\t\t\t-------");
 			
 			for(Product s:products) {
 				System.out.format("  %-13s%-40s\t%-40s\t\t\t%.02f\n",s.getCode().substring(1),s.getName(),s.getDescription(),s.getPrice().setScale(2,2));
