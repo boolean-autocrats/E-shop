@@ -41,24 +41,25 @@ public class OrderCreation {
 			if(selectedProduct == checkOut || selectedProduct == 0) {
 				break;
 			}
-			
-			int quantity = -1;
+			else if(selectedProduct < checkOut && selectedProduct >0) {
+				int quantity = -1;
 			 
-			while(quantity <= 0) {
-				System.out.print("Type quantity for this product:");
-				quantity = input.nextInt();
+				while(quantity <= 0) {
+					System.out.print("Type quantity for this product:");
+					quantity = input.nextInt();
+				}
+			
+				listOfSelectedProducts.add(new SelectedProduct());
+				listOfSelectedProducts.get(i).setCode(selectedProduct -1);
+				listOfSelectedProducts.get(i).setName(products.get(selectedProduct -1).getName());
+				listOfSelectedProducts.get(i).setDescription(products.get(selectedProduct -1).getDescription());
+				listOfSelectedProducts.get(i).setQuantity(quantity);
+				convertedPrice = (products.get(i).getPrice().setScale(2,2)).doubleValue();
+				listOfSelectedProducts.get(i).setPrice(convertedPrice);
+				listOfSelectedProducts.get(i).setTotalCost();
+			
+				i++;
 			}
-			
-			listOfSelectedProducts.add(new SelectedProduct());
-			listOfSelectedProducts.get(i).setCode(selectedProduct -1);
-			listOfSelectedProducts.get(i).setName(products.get(selectedProduct -1).getName());
-			listOfSelectedProducts.get(i).setDescription(products.get(selectedProduct -1).getDescription());
-			listOfSelectedProducts.get(i).setQuantity(quantity);
-			convertedPrice = (products.get(i).getPrice().setScale(2,2)).doubleValue();
-			listOfSelectedProducts.get(i).setPrice(convertedPrice);
-			listOfSelectedProducts.get(i).setTotalCost();
-			
-			i++;
 		}
 		
 		return listOfSelectedProducts;
