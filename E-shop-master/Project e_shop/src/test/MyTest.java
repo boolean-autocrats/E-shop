@@ -31,8 +31,7 @@ public class MyTest {
 			listOfAllProducts.add(p);
 		}
 		List<SelectedProduct> chosenProducts = new ArrayList<>();
-
-
+		ArrayList costomersInfo = new ArrayList();
 
 		CheckOut checkOut = new CheckOut();
 		OrderCreation createOrder = new OrderCreation();
@@ -45,9 +44,14 @@ public class MyTest {
 		int selection;
 		boolean Flag = false;
 		while(true){
-			//printing_the_stuff..
-			System.out.println("---------E-shop Selections---------");
-			System.out.println("------>" + DateTools.printCurrentDateTime() + "<-------\n");   //Date_and_time..
+			//Printing_the_stuff..
+			//Printing the log_status of the user
+			if(Flag == false) {
+				System.out.println("---------E-shop Selections---------\t You aren't Signed-in!!");
+			}else {
+				System.out.println("---------E-shop Selections---------\tWelcome " + costomersInfo.get(0) + " " + costomersInfo.get(1) + "!");
+			}
+			System.out.println("------>" + DateTools.printCurrentDateTime() + "<--------\n");   //Date_and_time..
 
 			System.out.println("1)Items List");
 			System.out.println("2)CheckOut");
@@ -73,7 +77,7 @@ public class MyTest {
 			}
 
 			//if_classes..
-
+			
 			if(selection == 1){
 				chosenProducts.addAll(createOrder.newOrder(listOfAllProducts));
 			}else if(selection == 2){
@@ -86,7 +90,7 @@ public class MyTest {
 			}else if(selection == 3){
 				//making the costumers information
 				Flag = true;
-				ArrayList costomersInfo = costumer.signInProcess();
+				costomersInfo = costumer.signInProcess();
 			}else{  //selection == 0 (Exit)
 				System.out.println("Thanks for coming!");
 				break;
