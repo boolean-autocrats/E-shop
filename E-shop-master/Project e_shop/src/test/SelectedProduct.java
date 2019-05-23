@@ -10,9 +10,6 @@ public class SelectedProduct {
     private double price;
 
     // Getters
-    public int getCode() {
-        return code;
-    }
 
     public void setCode(int code) {
         this.code = code;
@@ -40,10 +37,6 @@ public class SelectedProduct {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-    public double getTotalCost() {
-        return totalCost;
     }
 
 

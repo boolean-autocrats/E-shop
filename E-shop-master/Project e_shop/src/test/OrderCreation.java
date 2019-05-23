@@ -33,7 +33,7 @@ public class OrderCreation {
                 System.out.format("  %-13s%-40s\t%-40s\t\t\t%.02f\n", s.getCode().substring(1), s.getName(), s.getDescription(), s.getPrice().setScale(2, 2));
             }
             //System.out.println("\n  " + checkOut + "\t\t\tProceed to checkout");
-            System.out.println("   0\t\t\tOrder Completed - Back to Main Menu");
+            System.out.println("   0\t\t   Order Completed - Back to Main Menu");
 
             System.out.print("\nChoose an item to add to the basket:");
             selectedProduct = input.nextInt();
